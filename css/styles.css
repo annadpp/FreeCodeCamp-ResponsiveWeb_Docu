@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;600;800&display=swap');
+:root {
+    --lighter: #F3F6FA;
+    --light: #ABAEB3;
+    --medium: #7E858E;
+    --dark: #2D343A;
+    --blue: #4E93E2;
+    --yellow: #E8D54E;
+    --green: #7DC9A2;
+}
+
+* {
+    margin: 0;
+    font-family: 'Commissioner', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: var(--dark);
+    font-size: 0.95rem;
+}
+
+nav a:hover, a:active {
+    color: var(--green);
+}
+
+main a {
+    color: var(--blue);
+}
+
+main a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    font-weight: 600;
+    padding-bottom: 1rem;
+    color: var(--dark);
+}
+
+h2 {
+    font-weight: 600;
+    padding: 1rem 0;
+    color: var(--dark);
+}
+
+h3 {
+    font-weight: 500;
+    font-size: 1.3rem;
+    padding: 0.5rem 0;
+    color: var(--dark)
+}
+
+span.logo {
+    background-color: var(--yellow);
+    font-size: 1.2rem;
+    font-weight: 800;
+    padding: 8px 2px 2px 14px;
+    border-radius: 5px;
+    color: var(--dark);
+}
+
+main p {
+    padding: 0.4rem 0;
+    color: var(--medium)
+}
+
+nav p.menu {
+    padding: 1.8rem 0 0.5rem 0;
+    font-size: 0.9rem;
+    color: var(--medium);
+    font-weight: 600;
+}
+
+main p.menu {
+    font-size: 0.9rem;
+    color: var(--medium);
+    font-weight: 600;
+}
+
+nav li {
+    margin: 0.7rem 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.arrows div.toggler li {
+    border-left: 2.5px solid var(--light);
+    padding: 0.3rem 0.8rem;
+    margin-bottom: 0.2rem;
+}
+
+nav ul.toggle li a {
+    color: var(--light);
+    font-size: 0.9rem;
+}
+
+nav ul.toggle li:hover {
+    border-color: var(--blue);
+}
+
+nav ul.toggle li a:hover {
+    color: var(--blue);
+}
+
+main ul {
+    color: var(--blue);
+    font-size: 0.95rem;
+    margin: 1rem 0 0.5em 0;
+}
+
+main li {
+    margin-top: 0.5rem;
+}
+
+main header {
+    border-bottom: 1px solid var(--lighter);
+    margin-bottom: 1rem;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    column-gap: 2rem;
+    height: 100vh;
+}
+
+nav {
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: var(--lighter);
+    padding: 2.5rem 3.5rem;
+}
+
+main {
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 1rem 10% 3rem 10%;
+}
+
+section {
+    padding-top: 3rem;
+}
+
+code {
+    border-left: 2.5px solid var(--green);
+    padding: 0.7rem 0.8rem;
+    margin: 1rem 0;
+    display: block;
+    word-break: normal;
+    word-wrap: normal;
+    font-family: monospace;
+    color: var(--dark);
+    line-height: 1.5;
+    background-color: var(--lighter);
+}
+
+
+.arrows {
+    margin: 0 0 -0.6rem 0;
+    padding: 0;
+}
+
+
+
+.clicker {
+  width: 15px;
+  height: 15px;
+  color: var(--dark);
+}
+
+.clicker.hidden {
+  display: none;
+}
+
+.hidden_div {
+  height: 0px;
+  overflow: hidden;
+  transition: height 0.5s;
+}
+
+#show_menu:target ~ div a[href="#show_menu"] {
+  display: none;
+}
+#show_menu:target ~ div a[href="#hide_menu"] {
+  display: inline-block;
+}
+#show_menu:target ~ div .hidden_div.toggler {
+  height: 130px;
+}
