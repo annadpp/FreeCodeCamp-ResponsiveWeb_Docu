@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@100;400;500;600;800&display=swap');
 :root {
     --lighter: #F3F6FA;
     --light: #ABAEB3;
     --medium: #7E858E;
     --dark: #2D343A;
+    --darker: #282D32;
     --blue: #4E93E2;
     --yellow: #E8D54E;
     --green: #7DC9A2;
@@ -93,16 +94,16 @@ nav ul {
     margin-bottom: 0.2rem;
 }
 
-nav ul.toggle li a {
+.arrows div.toggler li a {
     color: var(--light);
     font-size: 0.9rem;
 }
 
-nav ul.toggle li:hover {
+.arrows div.toggler li:hover {
     border-color: var(--blue);
 }
 
-nav ul.toggle li a:hover {
+.arrows div.toggler li a:hover {
     color: var(--blue);
 }
 
@@ -121,18 +122,26 @@ main header {
     margin-bottom: 1rem;
 }
 
-.content {
+.container {
     display: grid;
-    grid-template-columns: 350px 1fr;
-    column-gap: 2rem;
+    grid-template-columns: 330px 1fr;
     height: 100vh;
 }
 
 nav {
+    background-color: var(--lighter);
+    padding: 25rem 3.5rem;
+}
+
+nav .navbar-menu {
     overflow-y: auto;
     overflow-x: hidden;
-    background-color: var(--lighter);
-    padding: 2.5rem 3.5rem;
+    position: fixed;
+    top: 4vh;
+}
+
+.content {
+    display: flex;
 }
 
 main {
@@ -158,13 +167,10 @@ code {
     background-color: var(--lighter);
 }
 
-
 .arrows {
     margin: 0 0 -0.6rem 0;
     padding: 0;
 }
-
-
 
 .clicker {
   width: 15px;
@@ -190,4 +196,184 @@ code {
 }
 #show_menu:target ~ div .hidden_div.toggler {
   height: 130px;
+  margin-top: -10px;
+}
+
+
+
+/*open div*/
+
+.button {
+    background-color: var(--green);
+    margin-top: 4rem;
+    padding: 0.1rem 0.2rem 0.3rem 0.2rem;
+    border-radius: 5px;
+    width: 85px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.button a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--lighter);
+    font-size: 0.8rem;
+}
+
+.button:hover {
+    background-color: var(--blue);
+}
+
+.button a:hover {
+    text-decoration: none;
+    color: var(--lighter);
+}
+
+.open {
+    display: none;
+    color: white;
+}
+
+.open:target {
+  display: initial;
+  background-color: var(--dark);
+}
+
+.open h2 {
+    color: white;
+    padding: 1.5rem 3rem;
+}
+
+.open p {
+    font-size: 0.9rem;
+}
+
+.open a {
+    color: white;
+    font-weight: 600;
+}
+
+.open p.menu {
+    padding: 1rem 0 0.5rem 3rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.open .close a {
+    padding-left: 3rem;
+    font-weight: 100;
+    font-size: 1.5rem;
+}
+
+.open header {
+    border-bottom: 1px solid var(--medium);
+    margin-bottom: 1rem;
+}
+
+.open section {
+    width: 25vw;
+    position: sticky;
+    padding-top: 0;
+    top: 3vh;
+}
+
+.open .table {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 3rem;
+}
+
+.open .table p {
+    font-size: 0.85rem;
+}
+
+.open .row-title {
+    display: flex;
+    column-gap: 1rem;
+    border-bottom: 1.5px solid var(--medium);
+    padding: 0.8rem 0;
+}
+
+.open .row {
+    display: flex;
+    column-gap: 1rem;
+    border-bottom: 1px solid var(--medium);
+    color: var(--light);
+    padding: 0.8rem 0;
+}
+
+.open .row-title div:nth-child(1), .open .row div:nth-child(1) {
+    width: 25%;
+}
+
+.open .row-title div:nth-child(1) p {
+    text-align: right;
+}
+
+p.tag {
+    font-family: monospace;
+    color: white;
+    text-align: right;
+}
+
+p.kind {
+    font-family: monospace;
+    color: var(--light);
+    text-align: right;
+}
+
+div.links {
+    padding: 3rem;
+    display: flex;
+    column-gap: 1.5rem;
+}
+
+button {
+    color: var(--medium);
+    background-color: var(--darker);
+    border: 0;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+button:hover {
+    color: var(--darker);
+    background-color: var(--medium);
+}
+
+
+@media only screen and (max-width: 1350px) {
+    .container {
+        grid-template-columns: minmax(300px, 20vw) 1fr;
+    }
+
+    nav {
+        padding: 0 5vw 0 3rem;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .open section {
+        width: 100%;
+        height: 100vh;
+        position: sticky;
+        padding-top: 3vh;
+        overflow: hidden;
+    }
+
+}
+
+@media only screen and (max-width: 850px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px 1fr;
+    }
+
+    .content {
+        background-color: red;
+    }
 }
