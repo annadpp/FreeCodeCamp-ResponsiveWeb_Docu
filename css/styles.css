@@ -1,3 +1,5 @@
+/*--This code follows the structure needed for passing the FreeCodeCamp tests*/
+
 @import url("https://fonts.googleapis.com/css2?family=Commissioner:wght@100;400;500;600;800&display=swap");
 :root {
   --lighter: #f3f6fa;
@@ -13,6 +15,10 @@
 * {
   margin: 0;
   font-family: "Commissioner", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 a {
@@ -34,22 +40,29 @@ main a:hover {
   text-decoration: underline;
 }
 
-h1 {
-  font-weight: 600;
-  padding-bottom: 1rem;
-  color: var(--dark);
-}
-
+header,
 h2 {
+  font-size: 1.4rem;
+  width: 350px;
   font-weight: 600;
   padding: 1rem 0;
   color: var(--dark);
 }
 
-h3 {
+header.submenu {
   font-weight: 500;
   font-size: 1.3rem;
   padding: 0.5rem 0;
+  color: var(--dark);
+}
+
+h1 {
+  position: absolute;
+  width: 350px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  top: 0px;
+  padding-bottom: 1rem;
   color: var(--dark);
 }
 
@@ -74,7 +87,7 @@ nav p.menu {
   font-weight: 600;
 }
 
-main p.menu {
+header.menu {
   font-size: 0.9rem;
   color: var(--medium);
   font-weight: 600;
@@ -264,6 +277,10 @@ code {
   font-size: 1.5rem;
 }
 
+.open .close a:hover {
+  font-weight: normal;
+}
+
 .open header {
   border-bottom: 1px solid var(--medium);
   margin-bottom: 1rem;
@@ -384,6 +401,7 @@ button:hover {
   .menu-big {
     display: none;
     position: absolute;
+    top: 35px;
     left: -47px;
     padding-left: 45px;
     background-color: var(--lighter);
@@ -398,7 +416,11 @@ button:hover {
     height: 100vh;
   }
 
-  #Introduction header h2 {
-    padding-top: 5vh;
+  #Introduction header {
+    padding-top: 7vh;
+  }
+
+  .open section {
+    padding-top: 13vh;
   }
 }
